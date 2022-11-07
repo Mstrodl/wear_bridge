@@ -2,11 +2,11 @@
 import 'wear_bridge_platform_interface.dart';
 
 class WearBridge {
-  Future<bool> isWatch() {
+  static Future<bool> isWatch() {
     return WearBridgePlatform.instance.isWatch();
   }
 
-  Future<void> openUrl(String url) async {
+  static Future<void> openUrl(String url) async {
     return WearBridgePlatform.instance.openUrl(url);
   }
 }

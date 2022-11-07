@@ -11,7 +11,12 @@ class MethodChannelWearBridge extends WearBridgePlatform {
 
   @override
   Future<bool> isWatch() async {
-    return (await methodChannel.invokeMethod<bool>('isWatch'))!;
+    try {
+      final result = await methodChannel.invokeMethod<bool>('isWatch');
+      return result ?? false;
+    } on PlatformException {
+      return false;
+    }
   }
 
   @override

@@ -17,7 +17,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool? _isWatch;
-  final _wearBridgePlugin = WearBridge();
 
   @override
   void initState() {
@@ -31,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      isWatch = await _wearBridgePlugin.isWatch();
+      isWatch = await WearBridge.isWatch();
     } on PlatformException {
       isWatch = null;
     }
@@ -57,9 +56,9 @@ class _MyAppState extends State<MyApp> {
           child: Column(children: [
               Text('Are we a watch? $_isWatch\n'),
               ElevatedButton(
-                child: Text('Open URL'),
+                child: const Text('Open URL'),
                 onPressed: () async {
-                  await _wearBridgePlugin.openUrl('https://coolmathgames.tech');
+                  await WearBridge.openUrl('https://coolmathgames.tech');
                 },
               ),
           ])
