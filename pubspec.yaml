@@ -35,8 +35,6 @@ flutter:
       android:
         package: tech.coolmathgames.wear_bridge
         pluginClass: WearBridgePlugin
-      ios:
-        pluginClass: WearBridgePlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
