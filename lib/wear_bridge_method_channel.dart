@@ -14,7 +14,7 @@ class MethodChannelWearBridge extends WearBridgePlatform {
     try {
       final result = await methodChannel.invokeMethod<bool>('isWatch');
       return result ?? false;
-    } on PlatformException {
+    } on MissingPluginException {
       return false;
     }
   }
