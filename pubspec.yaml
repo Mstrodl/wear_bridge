@@ -1,7 +1,7 @@
 name: wear_bridge
-description: A new Flutter plugin project.
+description: WearOS -> phone communication
 version: 0.0.1
-homepage:
+homepage: https://github.com/Mstrodl/wear_bridge
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
