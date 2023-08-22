@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'wear_bridge_platform_interface.dart';
+import 'dart:io';
 
 /// An implementation of [WearBridgePlatform] that uses method channels.
 class MethodChannelWearBridge extends WearBridgePlatform {
@@ -11,6 +12,9 @@ class MethodChannelWearBridge extends WearBridgePlatform {
 
   @override
   Future<bool> isWatch() async {
+    if (!Platform.isAndroid) {
+      return false;
+    }
     try {
       final result = await methodChannel.invokeMethod<bool>('isWatch');
       return result ?? false;
